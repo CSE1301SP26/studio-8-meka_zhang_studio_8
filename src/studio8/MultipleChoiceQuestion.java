@@ -11,11 +11,13 @@ public class MultipleChoiceQuestion extends Question {
 	 * @param points
 	 * @param choices
 	 */
+	private String[] choices;
 	public MultipleChoiceQuestion(String prompt, String answer, int points, String[] choices) {
 		// Call the super class constructor, then create and set
 		// instance variables for any values that aren't handled
 		// by the base class
-		throw new NotYetImplementedException();
+		super(prompt, answer, points);
+		this.choices = choices;
 	}
 	
 	/**
@@ -23,7 +25,11 @@ public class MultipleChoiceQuestion extends Question {
 	 * the choices present for the question.
 	 */
 	public void displayPrompt() {
-		throw new NotYetImplementedException();
+		super.displayPrompt();
+		String[] option = choices;
+		for(int i = 0; i < option.length; i++){
+			System.out.println(i+1 + ". " + option[i]);
+		}
 	}
 	
 	/**
@@ -31,11 +37,12 @@ public class MultipleChoiceQuestion extends Question {
 	 * @return String[] of choices
 	 */
 	public String[] getChoices() {
-		throw new NotYetImplementedException();
+		return choices;
 	}
 	
 	public static void main(String[] args) {
-		// TODO: create your own MultipleChoiceQuestion
+		//MultipleChoiceQuestion mcq = new MultipleChoiceQuestion("2+2", "4", 1, new String[]{"1","2","3","4"});
+		//mcq.displayPrompt();
 	}
 
 }
